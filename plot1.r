@@ -1,0 +1,6 @@
+library(sqldf)
+MyData3 <- read.csv.sql("c:/Users/sam/Desktop/household_power_consumption/household_power_consumption.txt",header=TRUE, sep=";",sql ="select * from file where Date='2/2/2007' or Date='1/2/2007'")
+par(mar= c(5,6,6,5))
+hist(MyData3$Global_active_power,main="Global Active Power",col="red",xlab="Global Active Power (killowatts)",ylab="Frequency")
+dev.copy(png, width=480,height=480,file="plot1.png")
+dev.off()
